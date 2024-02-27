@@ -43,6 +43,16 @@ int main(){
 }
 
 /*
+1. 題目: (n)base(ans) 可以被ans-1整除, 2<=ans<=62 給n找最小的ans
+   -> ex. (5)base(6)=5 可以被6-1=5整除
+   -> ex. (10)base(2)=2 可以被2-1=1整除
+   -> ex. (11)base(2)=3 可以被2-1=1整除
+   -> ex. (B)base(12)=11 可以被12-1=11整除
+   -> ex. (236)base(12)=330 可以被12-1=11整除
+   -> ex. (752)base(8)=490 可以被8-1=7整除
+   -> ex. (AB5)base(14)=2119 可以被14-1=13整除
+2. n有x位數，每個位數相加sum為k的倍數，且n為k+1進位
+   -> ex. n=5有1位數 sum=5為k的倍數，且5為b進位
 1. 題目要求ans整除sum
 2. 先確認sum
    -> ex. n=5 sum=5, n=15, sum=6, n=AB, sum=21
@@ -52,10 +62,10 @@ int main(){
    因為n的base一定大於等於max -> ex. n=15 base=10>=5, n=A base=16>=10
    因此第32行尋找ans時，從max開始到62
    -> ex. n=5 sum=5 max=5 j=5 5%5 ans=5+1=6
-   -> ex. n=10 sum=1 max=1 j=1 1%1 ans=1+1=2
+   -> ex. n=10 sum=1 max=1 j=1 1%1 ans=1+1=2            -> 
    -> ex. n=11 sum=2 max=1 j=1 2%1 ans=1+1=2
    -> ex. n=B sum=11 max=11 j=11 11%11 ans=11+1=12
-   -> ex. n=236 sum=11 max=6 j=6~11 11%11 ans=11+1=12
+   -> ex. n=236 sum=11 max=6 j=6~11 11%11 ans=11+1=12    
    -> ex. n=752 sum=14 max=7 j=7 14%7 ans=7+1=8
    -> ex. n=AB5 sum=26 max=11 j=11~13 26%13 ans=13+1=14
 */
