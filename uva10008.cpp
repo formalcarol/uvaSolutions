@@ -27,7 +27,7 @@ int main(){
         return a.first > b.first;		//bigger int first
     });
     
-    for (auto& i: ans){
+    for(auto& i: ans){
         cout << i.second << " " << i.first << endl;
     }
     
