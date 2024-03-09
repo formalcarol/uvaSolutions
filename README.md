@@ -9,7 +9,9 @@
     - ref: uva10008
 6. push_back()
 7. for(auto& i: ans) for(auto& i : nums)
+    - 有出現&，代表可以訪問、修改i；但沒出現只能訪問
 8. cout << setw(4) << kase++ << "." 格式控制
+    - ref: uva10101
 9. substr(0, h)
     - ref: uva11576
 
