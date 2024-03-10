@@ -21,3 +21,6 @@
     - ex. "how are you"
         - while(cin >> str1 >> str2 >> str3), str1="how", str2="are", str3="you"
         - while(getline(cin, str)), str="how are you"
+
+## 相關主題
+1. 回文: uva11349, uva401
