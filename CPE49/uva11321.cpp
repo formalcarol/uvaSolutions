@@ -1,44 +1,34 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
 
-int n, m;
-
+int m, n;
 bool cmp(int a, int b){
-	if(a%m != b%m){
-		return a%m < b%m;
-	}
-	else{
-		if((a&1) && (b&1)){			//both odd
+	if(a%m == b%m){
+		if((a&1) && (b&1)){			//both odd, larg first
 			return a > b;
 		}
-		else if(!(a&1) && !(b&1)){	//both even
-			return a < b;
+		else if(!(a&1) && !(b&1)){	//both even, small first
+			return b > a;
 		}
-		else{						//one is odd, one is even
+		else{						//one is odd and one is even, odd first
 			return a&1;				//if a=0, cmp=a&1=0, then b>a
 		}							//if a=1, cmp=a&1=1, then a>b
 	}
+	return b%m > a%m;				//if not equal, small mod first
 }
 
 int main(){
-	while (cin >> n >> m){
-		cout << n << " " << m << endl;
-		
+	while(cin >> n >> m){
+		cout << n << ' ' << m << endl;
 		vector<int> nums(n);
-		for (auto& i : nums){
-            cin >> i;
-        }
+		for(auto& i: nums){
+			cin >> i;
+		}
 		
 		sort(nums.begin(), nums.end(), cmp);
-		
-		for(auto& i: nums){
+		for(auto i: nums){
 			cout << i << endl;
 		}
 	}
-	//first while n=15, m=3
-	//print n, m (#25)
-	//run while, until no cin
-	//second while n=0, m=0
-	//print n, m (#25)
 	return 0;
 }
