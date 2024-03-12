@@ -14,6 +14,10 @@
     - ref: uva10101
 9. substr(0, h)
     - ref: uva11576
+10. set<int> sum;   
+    sum.insert(arr[i]+arr[j]);  //集合沒有重複的值
+    - ref: uva11063
+
 
 ## 注意事項
 1. while(getline(cin, str)) 和 while(cin >> str) 的差別
