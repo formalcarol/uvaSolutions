@@ -2,27 +2,27 @@
 using namespace std;
 
 int main(){
-	int n, m;
-	while(cin >> n >> m && (n||m)){
-		int cnt=0, k=0;
-		while(n||m){
-			k = n%10 + m%10 + k;
-			if(k>=10){
-				cnt++;
+	int a, b;
+	while((cin >> a >> b)&&(a!=0)&&(b!=0)){
+		int sum=0, temp=0;
+		while((a!=0)||(b!=0)){
+			temp = a%10 + b%10 + temp;
+			if(temp >= 10){
+				sum++;
 			}
-			n = n/10;
-			m = m/10;
-			k = k/10;
+			a = a/10;
+			b = b/10;
+			temp = temp/10;
 		}
 		
-		if(cnt == 0){
+		if(sum==0){
 			cout << "No carry operation." << endl;
 		}
-		else if(cnt == 1){
+		else if(sum==1){
 			cout << "1 carry operation." << endl;
 		}
 		else{
-			cout << cnt << " carry operations." << endl;
+			cout << sum << " carry operations." << endl;
 		}
 	}
 	return 0;
