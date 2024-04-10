@@ -3,15 +3,19 @@
    - 有出現&，代表可以訪問、訪問
    for(auto& i: nums)
    - 沒出現&，只能訪問，不可訪問
-2. sort(nums.begin(), nums.end()); 由大至小排序
-   sort(nums.begin(), nums.end(), cmp); cmp必定是bool, ref:uva11321
-   - 若希望由小至大，則b>a
-   - 若希望奇前偶後，則a&1
-   - a>b 是希望根據a, b大小排序, ex. 3>2
-     a%m > b%m 是希望根據a, b的餘數大小排序, ex. 2%3 > 3%3
-   sort(ans.begin(), ans.end(), [](auto a, auto b)) 
-3. sort(arr, arr+n);
-   - 第2點只適用於vector，若要用array，則須用這個, ref: uva10041
+
+## sorting
+### vector
+- sort(nums.begin(), nums.end()); 由大至小排序
+  sort(nums.begin(), nums.end(), cmp); cmp必定是bool, ref:uva11321
+    - 若希望由小至大，則b>a
+    - 若希望奇前偶後，則a&1
+    - a>b 是希望根據a, b大小排序, ex. 3>2
+      a%m > b%m 是希望根據a, b的餘數大小排序, ex. 2%3 > 3%3
+  sort(ans.begin(), ans.end(), [](auto a, auto b)) 
+
+### array
+- sort(arr, arr+n); ref: uva10041
 
 2. str.find(char) 在str中尋找char，並回復char的index
     - ref: uva401#26
