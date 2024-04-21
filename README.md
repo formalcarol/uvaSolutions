@@ -1,42 +1,76 @@
-## 常用函數
-1. for(auto& i: nums) 
-   - 有出現&，代表可以訪問、訪問
-   for(auto& i: nums)
-   - 沒出現&，只能訪問，不可訪問
+## 輸入資料
+1. 讀入kase筆資料, #uva10041
+```
+int kase;
+cin >> kase;
+while(kase--){
+    //程式碼
+}
+```
+2. 沒有說有幾筆資料，讀到結束, #uva10055
+```
+int s;
+while(cin >> s){
+    //程式碼
+}
+```
+3. 讀到0結束, #uva10035
+```
+int s;
+while(cin >> s && (s != 0)){
+    //程式碼
+}
+```
 
-## sorting
-### vector
-- sort(nums.begin(), nums.end()); 由大至小排序
-  sort(nums.begin(), nums.end(), cmp); cmp必定是bool, ref:uva11321
-    - 若希望由小至大，則b>a
-    - 若希望奇前偶後，則a&1
-    - a>b 是希望根據a, b大小排序, ex. 3>2
-      a%m > b%m 是希望根據a, b的餘數大小排序, ex. 2%3 > 3%3
-  sort(ans.begin(), ans.end(), [](auto a, auto b)) 
+## 數字
+### 數字限制
+- int 介於 -(2^31)~(2^31)-1 或 小於10 digits
+- unsigned int 介於 0~(2^32)-1
+- long long int 介於 -(2^63)~(2^63)-1
+### 123拆分成1, 2, 3, #uva10035
+```
+int main(){
+    int a, b, lenA, lenB;   //int不可以用.size()或.length()，故沒有lenA=a.size();
+    cin >> a >> b;
+    int arrA[11]={0}, arrB[11]={0}, sum[12]={0};
+    divide(a, arrA, lenA);
+    divide(b, arrB, lenB);
+}
+void divide(int n, int arr[], int& len){
+	for(len=0; n!=0; len++){
+		arr[len] = n%10;
+		n /= 10;
+	}
+}
+```
 
-### array
-- sort(arr, arr+n); ref: uva10041
+## vector
+- vector<int> num;              //uva10041
+- num.clear();                  //uva10041
+- cin >> s; num.push_back(s);   //uva10041
+- 由小排到大 sort(num.begin(), num.end());  //uva10041
 
-2. str.find(char) 在str中尋找char，並回復char的index
-    - ref: uva401#26
-3. vector<int> text(26), vector<pair<int, char>> ans
-    - ref:uva10008
-4. isalpha(c) 判斷c是否為子母(非符號或數字或空格等)，回復bool
-6. push_back()
+## Sort, Search
 
-8. cout << setw(4) << kase++ << "." 格式控制
-    - ref: uva10101
-9. substr(0, h)
-    - ref: uva11576
-10. set<int> sum;   
-    sum.insert(arr[i]+arr[j]);  //集合沒有重複的值
-    - ref: uva11063
-1. while(getline(cin, str)) 和 while(cin >> str) 的差別
-    - while(cin >> str)遇到空格、換行都會斷開，但while(getline(cin, str))只有遇到換行才段開
-    - ex. "how are you"
-        - while(cin >> str1 >> str2 >> str3), str1="how", str2="are", str3="you"
-        - while(getline(cin, str)), str="how are you"
+## Greedy Algorithm
+- 使用迴圈，每次都選最好的
 
-## 相關主題
-1. 回文: uva11349, uva401
-2. 排序: uva11321
+## Dynamic Programming
+
+## Graph Traversal
+### DFS
+### BFS
+
+## Minimum Spanning Tree
+### Prim
+### Kruskal
+
+## Shortest Path
+### Bellman-Ford
+### Dijkstra
+### Floyd-Warshall
+### A*
+
+## Maximum Flow
+### Floyd-Fulkerson
+### Push-Relabel
