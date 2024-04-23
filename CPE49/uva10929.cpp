@@ -1,25 +1,16 @@
-//abs(sum(odd bit)-sum(even bit)) is 0 or 11
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
+//若 abs(奇數位的總和-偶數位的總和) 為11的倍數，則該數為11的倍數
 int main(){
-	string n;
-	while(cin >> n && (n!="0")){
-		int odd=0, even=0;
-		for(int i=0; i<n.size(); i++){
-			if(i%2){
-				even = even+(n[i]-'0');
-			}
-			else{
-				odd = odd+(n[i]-'0');
-			}
+	string a;
+	while(cin >> a && (a!="0")){
+		long long int sum[2]={0};		//1個是奇數位的總和，另一個是偶數位的總和
+		for(int i=0; i<a.size(); i++){
+			sum[i%2] += (a[i]-'0');		//不用真的在乎從個數位開始分奇偶數，反正最後要abs()
 		}
-		if(abs((even-odd))%11 != 0){
-			cout << n << " is not a multiple of 11." << endl;
-		}
-		else{
-			cout << n << " is a multiple of 11." << endl;
-		}
+		if(abs(sum[0]-sum[1])%11)	cout << a << " is not a multiple of 11." << endl;
+		else						cout << a << " is a multiple of 11." << endl;
 	}
 	return 0;
 }
