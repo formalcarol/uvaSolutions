@@ -1,35 +1,19 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
-    int n;
-    cin >> n;
-    
-    char c;
-    vector<int> text(26);
-    while(cin >> c){
-        if(isalpha(c)){
-            text[int(toupper(c))-'A']++;
-        }
-    }
-    
-    vector<pair<int, char>> ans;
-    for(int i=0; i<26; i++){
-        if (text[i]){				//delete the alpha which count=0
-            ans.push_back({text[i], char(i+'A')});
-        }
-    }
-    
-    sort(ans.begin(), ans.end(), [](auto a, auto b){
-        if (a.first == b.first){
-            return a.second < b.second;	//if a.int = b.int then smaller ASCII first
-        }
-        return a.first > b.first;		//bigger int first
-    });
-    
-    for(auto& i: ans){
-        cout << i.second << " " << i.first << endl;
-    }
-    
-    return 0;
+	int len;
+	int cnt[128]={0};   //ASCII有128碼
+	char c;
+	while(cin >> c){        //第1個輸入是kase，但數字不包含計算，會被忽略，所以不用寫
+		len++;              //全部的char，包含數字和符號
+		cnt[toupper(c)]++;  //toupper(char 數字)=數字的ASCII, toupper(char 符號)=符號的ASCII，所以都不會影響A~Z的區間
+	}                       //toupper('4')=52, toupper('!')=33
+	while(--len){           //題目要求根據count排序，最大的就是len，所以直接從len往下數，沒有排序
+		for(c='A'; c<='Z'; c++){
+			if(cnt[c]==len)	cout << c << ' ' << cnt[c] << endl;
+		}
+	}
+	
+	return 0;
 }

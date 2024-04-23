@@ -54,6 +54,10 @@ void divide(int n){
 }
 ```
 
+## 字元
+- ASCII有128碼，空格=32，'0'~'9'=48~57，'A'~'Z'=65~90，'a'~'z'=97~122
+- toupper(char 數字)=數字的ASCII, toupper(char 符號)=符號的ASCII    //uva10008
+
 ## vector
 ```
 vector<int> num;                          //uva10041
