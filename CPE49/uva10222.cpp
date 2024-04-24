@@ -1,17 +1,13 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
-	string key="`1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./";
+	string dic="`1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./";
 	string str;
 	while(getline(cin, str)){
 		for(auto i: str){
-			if(i != ' '){
-				cout << key[key.find(tolower(i))-2];
-			}
-			else{
-				cout << ' ';
-			}
+			if(i!=' ')	cout << dic[dic.find(tolower(i))-2];
+			else		cout << ' ';
 		}
 		cout << endl;
 	}

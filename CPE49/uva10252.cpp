@@ -1,29 +1,26 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
 	string str1, str2;
 	while(getline(cin, str1)){
 		getline(cin, str2);
-		int idx[2][26]={0};		//2string * 26alpha
-	
-		for(auto i: str1){		//calculate str1
-			idx[0][i-'a']++;
-		}
-		for(auto i: str2){		//calculate str2
-			idx[1][i-'a']++;
-		}
-		for(auto i: str2){
-			idx[1][i-'a'] = min(idx[0][i-'a'], idx[1][i-'a']);
-		}
 		
-		for(int i=0; i<26; i++){
-			while(idx[1][i] != 0){
-				cout << char('a'+i);
-				idx[1][i]--;
+		int cnt1[26]={0};
+		int cnt2[26]={0};
+		
+		for(auto i: str1)	cnt1[i-'a']++;
+		for(auto i: str2)	cnt2[i-'a']++;
+		
+		for(auto i: str2)	cnt2[i-'a']=min(cnt1[i-'a'], cnt2[i-'a']);
+		
+		for(int i='a'; i<='z'; i++){
+			while(cnt2[i-'a']){
+				cout << char(i);
+				cnt2[i-'a']--;
 			}
 		}
 		cout << endl;
 	}
-	return 0;
+	return 0; 
 }

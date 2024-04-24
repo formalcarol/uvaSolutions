@@ -21,6 +21,15 @@ while(cin >> s && (s != 0)){
     //程式碼
 }
 ```
+### 注意事項
+```
+char c;
+string str;
+cin >> c;			//若輸入為空格，會忽略空格
+cin.get(c);			//遇到換行停止，不會忽略空格
+getline(cin, str);	//一次讀一行，不會忽略空格
+}
+```
 
 ## 數字
 ### 數字限制
@@ -55,8 +64,9 @@ void divide(int n){
 ```
 
 ## 字元
-- ASCII有128碼，空格=32，'0'~'9'=48~57，'A'~'Z'=65~90，'a'~'z'=97~122
+- ASCII有128碼，空格=32，'0'-'9'=48-57，'A'-'Z'=65-90，'a'-'z'=97-122
 - toupper(char 數字)=數字的ASCII, toupper(char 符號)=符號的ASCII    //uva10008
+- str.find(target)	//在str中尋找target
 
 ## vector
 ```
