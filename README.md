@@ -25,10 +25,9 @@ while(cin >> s && (s != 0)){
 ```
 char c;
 string str;
-cin >> c;			//若輸入為空格，會忽略空格
-cin.get(c);			//遇到換行停止，不會忽略空格
-getline(cin, str);	//一次讀一行，不會忽略空格
-}
+cin >> c;			//會忽略空格
+cin.get(c);			//不會忽略空格，換行停止
+getline(cin, str);	//不會忽略空格，換行停止
 ```
 
 ## 數字

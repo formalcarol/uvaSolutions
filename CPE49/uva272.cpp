@@ -1,23 +1,17 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
 	string str;
-	int k=0;
+	int cnt=0;		//要放在while外，不會因為換行就重新計數
 	while(getline(cin, str)){
 		for(auto& i: str){
-			if(i == '\"'){
-				if(k%2==0){
-					cout << "``";
-				}
-				else{
-					cout << "''";
-				}
-				k++;
+			if(i=='\"'){
+				cnt++;
+				if(cnt%2)	cout << "``";
+				else	cout << "''";
 			}
-			else{
-				cout << i;
-			}
+			else	cout << i;
 		}
 		cout << endl;
 	}
