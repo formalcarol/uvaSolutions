@@ -1,20 +1,20 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
+//1/1 sat
 int main(){
-	int kase, mon, da;
+	int kase;
 	cin >> kase;
 	int month[12]={31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	string day[7]={"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+	string week[7]={"Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
+	
 	while(kase--){
-		cin >> mon >> da;
-		int days=0;
-		for(int i=0; i<mon-1; i++){
-			days += month[i];
+		int mon, day, days=0;
+		cin >> mon >> day;
+		for(int i=1; i<mon; i++){
+			days+=month[i-1];
 		}
-		days += da;
-		days -= 1;	//because 1/1 is Saturday, but 1%7=1
-		cout << day[days%7] << endl;
+		days+=day;
+		cout << week[days%7] << endl;
 	}
 	return 0;
 }
