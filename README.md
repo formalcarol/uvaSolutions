@@ -30,6 +30,12 @@ cin.get(c);			//不會忽略空格，換行停止
 getline(cin, str);	//不會忽略空格，換行停止
 ```
 
+## 輸出資料
+```
+cout.precision(4);              //輸出固定4位數，uva10056
+cout << fixed << ans << endl;
+```
+
 ## 數字
 ### 數字限制
 - int 介於 -(2^31)~(2^31)-1 或 小於10 digits

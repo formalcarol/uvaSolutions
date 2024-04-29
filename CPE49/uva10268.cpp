@@ -1,28 +1,25 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
+//x=7, coef={1, -1}, len=2
+//2x^3+3x^2-1, 6x^2+6x
+//x=7, coef={2, 3, 0, -1}, len=4
 int main(){
-	int a;
-	while(cin >> a){
-		string s;
-		stringstream trans;
-		int temp, sum=0, cnt=0, j=0;
+	int x;
+	while(cin >> x){
+		int len, ans=0, j=0;
 		int coef[1000]={0};
 		
-		trans.str("");
-		cin.ignore();
-		getline(cin, s);
-		trans << s;
-		
-		while(trans >> temp){
-			coef[cnt++]=temp;
+		for(len=0;;len++){
+			cin >> coef[len];
+			if(getchar()=='\n')	break;
 		}
-		
-		for(int i=cnt-1; i>0; i--){
-			sum += i*coef[j]*pow(a, i-1);
+
+		//len應該要先-1再和係數乘，但第14行的break使得最後一次的len沒有+1，所以本來就少1，不用再減
+		for(int i=len; i>0; i--){
+			ans += i*coef[j]*pow(x, i-1);
 			j++;
 		}
-		cout << sum << endl;
+		cout << ans << endl;
 	}
 	return 0;
 }

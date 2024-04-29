@@ -6,7 +6,7 @@ int main(){
 	cin >> kase;
 	while(cin >> sum >> dif){
 		if(sum >= dif){
-			if((sum+dif)%2 != 0){
+			if((sum+dif)%2 != 0){	//sum和dif必是同號，同號相加為偶數
 				cout << "impossible" << endl;
 			}
 			else{
