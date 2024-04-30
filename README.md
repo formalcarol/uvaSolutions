@@ -3,23 +3,16 @@
 ```
 int kase;
 cin >> kase;
-while(kase--){
-    //程式碼
-}
+while(kase--)
 ```
 2. 沒有說有幾筆資料，讀到結束, uva10055
 ```
-int s;
-while(cin >> s){
-    //程式碼
-}
+while(cin >> s)
 ```
 3. 讀到0結束, #uva10035
 ```
-int s;
-while(cin >> s && (s != 0)){
-    //程式碼
-}
+while(cin >> s && (s != 0))
+while(cin >> a >> b && (a != 0 || b != 0))
 ```
 ### 注意事項
 ```
@@ -34,6 +27,8 @@ getline(cin, str);	//不會忽略空格，換行停止
 ```
 cout.precision(4);              //輸出固定4位數，uva10056
 cout << fixed << ans << endl;
+
+cout << setw(4) << kase++ << ".";   //保留4位, uva10101
 ```
 
 ## 數字
@@ -86,6 +81,18 @@ sort(num.begin(), num.end());             //由小排到大uva10041
 map<string, int> cnt;                             //uva10420
 cin >> country; cnt[country]++;                   //key會自動排序, uva10420
 ```
+
+## set
+1. 會自動排序
+2. 相同的元素只會出現1次
+```
+set<int> sum;                           //uva11063
+for(auto i: m){                         //uva11063
+    for(auto j: m)	sum.insert(i+j);
+}
+sum.size()==(1+n)*n/2                   //uva11063
+```
+
 ## for(auto& i: cnt)
 ```
 //num是vector
