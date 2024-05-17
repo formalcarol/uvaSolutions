@@ -113,6 +113,14 @@ for(auto& i: cnt) {                               //輸出2: i是物件, uva1042
 }
 ```
 
+## stack
+```
+stack<int> st;      //宣告, uva100931
+st.push(i%2);       //加值
+cout << st.top();   //輸出最晚進的值
+st.pop();           //刪最晚進的值
+```
+
 ## Sort, Search
 ```
 int main(){
