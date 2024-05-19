@@ -150,6 +150,16 @@ bool cmp3(int a, int b){    //若1奇1偶
     return a&1;             //若a為奇，則a&1為true，則a先b後，則奇先偶後
 }                           //若a為偶，則a&1為false，則b先a後，則奇先偶後
 ```
+
+## 進位轉為
+```
+for(int base=2; base<=36; base++){      //number轉成base進位, uva11005
+    for(int i=number; i>0; i/=base){
+        ans = i%base;   //需要處理
+    }
+}
+```
+
 ## Greedy Algorithm
 - 使用迴圈，每次都選最好的
 
