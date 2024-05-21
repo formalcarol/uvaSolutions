@@ -120,6 +120,19 @@ st.push(i%2);       //加值
 cout << st.top();   //輸出最晚進的值
 st.pop();           //刪最晚進的值
 ```
+## 輾轉相除法
+```
+int gcd(int p, int q){          //法1: uva10193
+	if(p<q)	return gcd(q, p);
+	if(q==0)	return p;
+	return gcd(q, p%q);
+
+}
+int gcd(int x, int y){          //法2: uva11417
+	while(x%=y)	swap(x, y);
+	return y;
+}
+```
 
 ## Sort, Search
 ```
@@ -151,7 +164,7 @@ bool cmp3(int a, int b){    //若1奇1偶
 }                           //若a為偶，則a&1為false，則b先a後，則奇先偶後
 ```
 
-## 進位轉為
+## 進位轉換
 ```
 for(int base=2; base<=36; base++){      //number轉成base進位, uva11005
     for(int i=number; i>0; i/=base){
